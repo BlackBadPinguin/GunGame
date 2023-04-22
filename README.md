@@ -1,7 +1,7 @@
-# Arma 3 GunGame (Nordholm)
-Arma 3 GunGame **can be used with any Arma 3 Map and most of its mods, BUT** the Files in this repository are pre-configured to work on Nordholm, a map made by [RealLifeRPG](https://realliferpg.de/). It also depends on the RealLifeRPG Mod Pack. **All dependencies can easily be removed**.
+# Arma 3 GunGame (Wiesberg)
+Arma 3 GunGame **can be used with any Arma 3 Map and most of its mods, BUT** the Files in this repository are pre-configured to work on Wiesberg, a map made by [Panthor Life](https://panthor.de/). It also depends on the Panthor Life Mod Pack. **All dependencies can easily be removed**.
 
-The RealLifeRPG Mod-Pack is free to use for private purposes, if you want to make your own public GunGame Server please refrain from using it!
+The Panthor Life Mod-Pack is free to use for private purposes, if you want to make your own public GunGame Server please refrain from using it!
 
 # Features
 
@@ -70,6 +70,6 @@ copyToClipboard spawns;
 # License & Credits
 Arma 3 GunGame Nordholm is licensed under the MIT License.
 
-Since it is based on the work of [Bytex Digital](https://bytex.digital/) credit must be given to both [Bytex Digital](https://bytex.digital/) and [RealLifeRPG](https://realliferpg.de/).
+Since it is based on the work of [Bytex Digital](https://bytex.digital/) credit must be given to both [Bytex Digital](https://bytex.digital/) and [Panthor Life](https://panthor.de/).
 
 Original Mission by BytexDigital [GunGame Tanoa (Steam Workshop)](https://steamcommunity.com/sharedfiles/filedetails/?id=706052183&searchtext=gungame)
