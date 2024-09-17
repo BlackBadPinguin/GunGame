@@ -1,5 +1,5 @@
-# Arma 3 GunGame (Wiesberg)
-Arma 3 GunGame **can be used with any Arma 3 Map and most of its mods, BUT** the Files in this repository are pre-configured to work on Wiesberg, a map made by [Panthor Life](https://panthor.de/). It also depends on the Panthor Life Mod Pack. **All dependencies can easily be removed**.
+# Arma 3 GunGame (Mainau)
+Arma 3 GunGame **can be used with any Arma 3 Map and most of its mods, BUT** the Files in this repository are pre-configured to work on Mainau, a map made by [Panthor Life](https://panthor.de/). It also depends on the Panthor Life Mod Pack. **All dependencies can easily be removed**.
 
 The Panthor Life Mod-Pack is free to use for private purposes, if you want to make your own public GunGame Server please refrain from using it!
 
@@ -68,7 +68,7 @@ copyToClipboard spawns;
 ```
 
 # License & Credits
-Arma 3 GunGame Nordholm is licensed under the MIT License.
+Arma 3 GunGame Mainau is licensed under the MIT License.
 
 Since it is based on the work of [Bytex Digital](https://bytex.digital/) credit must be given to both [Bytex Digital](https://bytex.digital/) and [Panthor Life](https://panthor.de/).
 
