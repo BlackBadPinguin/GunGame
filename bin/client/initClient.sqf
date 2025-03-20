@@ -16,7 +16,7 @@ gg_leadingplayer = objNull;
 // Broadcasted vars
 player setVariable ["gg_level", 0, true];
 
-//[getPlayerUID player,name player] remoteExec ['db_fnc_updatePlayer',2];
+[getPlayerUID player,name player] remoteExec ['db_fnc_updatePlayer',2];
 
 // Handlers
 [] spawn gg_fnc_setupEventHandlers;

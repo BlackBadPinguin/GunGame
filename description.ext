@@ -57,6 +57,15 @@ class CfgFunctions
 			class win {};
 		};
 	};
+	class Database {
+		tag = "db";
+		class functions {
+			file = "bin\server\db";
+			class initDb {};
+			class logKill {};
+			class updatePlayer {};
+		};
+	};
 };
 
 // Header
