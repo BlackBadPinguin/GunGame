@@ -4,7 +4,7 @@ class CfgGungame {
 		voteTime = 60;
 
 		// 0 disables all database functions
-		db = 1;
+		db = 0;
 	};
 
 	#include "Config_Arenas.cpp"
