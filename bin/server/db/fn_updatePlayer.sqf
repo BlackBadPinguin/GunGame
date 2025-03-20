@@ -24,5 +24,5 @@ params[
 if (_pid isEqualTo "") exitWith { diag_log "GG_ERROR: updatePlayer.sqf - pid empty"; };
 if (_name isEqualTo "") exitWith { diag_log "GG_ERROR: updatePlayer.sqf - name empty"; };
 
-//call compile ("extDB3" callExtension format ["1:%1:update_player:%2:%3", gg_sql_id, _pid,_name]);
+call compile ("extDB3" callExtension format ["1:%1:update_player:%2:%3", gg_sql_id, _pid,_name]);
 

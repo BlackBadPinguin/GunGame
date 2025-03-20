@@ -19,6 +19,6 @@ params[
 	["_map","",[""]]
 ];
 
-//private _result = call compile ("extDB3" callExtension format ["1:%1:log_game:%2", gg_sql_id, _map]);
+private _result = call compile ("extDB3" callExtension format ["1:%1:log_game:%2", gg_sql_id, _map]);
 
-//waitUntil { _result };
+waitUntil { _result };

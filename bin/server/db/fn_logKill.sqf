@@ -20,4 +20,4 @@ params[
 	["_victim_pid","",[""]]
 ];
 
-//call compile ("extDB3" callExtension format ["1:%1:log_kill:%2:%3", gg_sql_id, _pid,_victim_pid]);
+call compile ("extDB3" callExtension format ["1:%1:log_kill:%2:%3", gg_sql_id, _pid,_victim_pid]);
