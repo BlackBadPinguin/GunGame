@@ -2,7 +2,7 @@ scriptName "initServer";
 
 #define __filename "initServer.sqf"
 
-//call db_fnc_initDb;
+call db_fnc_initDb;
 
 // Different vars
 gg_gamestatus = 0; // Waiting for weapon list
