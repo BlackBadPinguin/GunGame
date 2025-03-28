@@ -45,6 +45,7 @@ if !((goggles player) isEqualTo _goggles) then {
 };
 
 player addItemToBackpack "RL_ID_CARD";
+player addItemToBackpack "ACE_EarPlugs";
 
 // assign nightvision and rangefinder
 player linkItem "TAC_SG_SK";
