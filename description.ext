@@ -15,8 +15,9 @@ respawn = "BASE";
 // Make corpses despawn
 corpseLimit = 1;
 corpseRemovalMinTime = 1;
-corpseRemovalMaxTime = 1;
+corpseRemovalMaxTime = 10;
 corpseManagerMode = 1;
+disposalCheckPeriod = 10;
 
 respawnDialog = 0;
 saving = 0;
