@@ -46,3 +46,8 @@ if (gg_stagekills >= _killsRequired) then {
 
 //heal player after kill
 [player] call ace_medical_treatment_fnc_fullHealLocal;
+
+//delete all dead corpses
+{
+    deleteVehicle _x;
+} forEach allDeadMen;
