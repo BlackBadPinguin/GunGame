@@ -6,8 +6,6 @@ disableSerialization;
 
 _leading = param[0,objNull,[objNull]];
 
-gg_leadingplayer = _leading;
-
 // Wat
 if (isNull _leading) exitWith {};
 

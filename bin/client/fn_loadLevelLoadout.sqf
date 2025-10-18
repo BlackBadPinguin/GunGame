@@ -32,9 +32,12 @@ if !((backpack player) isEqualTo _backpack) then {
 	player addBackpack _backpack;
 };
 
+private _leadingPlayerHat = getText(missionConfigFile >> "CfgGungame" >> "Basic" >> "leading_player_hat");
+
 private _headgear = getText(_loadoutConfig >> "headgear");
-if !((headgear player) isEqualTo _headgear) then {
-	removeHeadgear player;
+if ((getPlayerUID player) == GG_LEADING_PLAYER) then {
+	player addHeadgear _leadingPlayerHat;	
+} else {
 	player addHeadgear _headgear;
 };
 
@@ -44,8 +47,10 @@ if !((goggles player) isEqualTo _goggles) then {
 	player addGoggles _goggles;
 };
 
-player addItemToBackpack "RL_ID_CARD";
-player addItemToBackpack "ACE_EarPlugs";
+player addItemToUniform "RL_ID_CARD";
+player addItemToUniform "ACE_EarPlugs";
+
+[player] call ace_hearing_fnc_putInEarplugs;
 
 // assign nightvision and rangefinder
 player linkItem "TAC_SG_SK";
@@ -96,6 +101,9 @@ if !((currentWeapon player) isEqualTo _weapon) then {
 };
 
 private _scope = getText( [gg_level] call gg_fnc_currentWeaponListEntry >> "scope");
+if (_scope == "DEFAULT") then {
+	_scope = profileNamespace getVariable ["RL_GunGame_PlayerSettings_Scope", getText (missionConfigFile >> "CfgGungame" >> "Basic" >> "default_scope")];
+};
 
 if !(_scope in (primaryWeaponItems player)) then {
 	player addPrimaryWeaponItem _scope;
@@ -104,4 +112,13 @@ if !(_scope in (primaryWeaponItems player)) then {
 player enableStamina false;
 player setCustomAimCoef 0;
 
+_type = getNumber(configFile >> "cfgWeapons" >> _weapon >> "type");
+_move = ([animationState player, "_"] call BIS_fnc_splitString)#0;
 
+_move = switch (_type) do {
+	case 1: {[_move, "pst", "rfl"] call gg_fnc_stringReplace;};
+	case 2: {[_move, "rfl", "pst"] call gg_fnc_stringReplace;};
+	case 4: {[_move, "rfl", "lnr"] call gg_fnc_stringReplace;};
+};
+
+player switchMove _move;

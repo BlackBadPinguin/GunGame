@@ -35,6 +35,6 @@ deleteVehicle _oldbody;
 sleep 3.5;
 
 // Do not run if match is done
-if (gg_gamestatus != 2) then {
+if (gg_gamestatus != 3) then {
 	10000 cutRsc ["gungame_respawn", "PLAIN"];
 };

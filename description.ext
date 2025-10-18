@@ -1,3 +1,5 @@
+#include "script_macros.hpp"
+
 //disableChannels[]={{0,false,false},{1,false,false},{2,false,false},{3,false,false}};
 //disableChannels[]={0,2,3,4};
 
@@ -29,10 +31,13 @@ class CfgFunctions
 		tag = "gg";
 		class functions {
 			file = "bin\client";
+			class stringReplace {};
 			class setupEventHandlers {};
 			class MPHit {};
 			class kill {};
 			class selectMap {};
+			class selectWeapon {};
+			class voteForWeapon {};
 			class weaponDetails {};
 			class killProcessor {};
 			class showArena {};
@@ -48,6 +53,12 @@ class CfgFunctions
 			class suspensemusic {};
 			class handleDamage {};
 			class currentWeaponListEntry {};
+			class parseWeaponText {};
+			class disableFallDamage {postInit=1};
+			class handleOutsideArea {postInit=1};
+			class openPlayerSettings {};
+			class savePlayerSettings {};
+            class setupCBAKeys {};
 		};
 	};
 	class Server {
@@ -56,6 +67,7 @@ class CfgFunctions
 			file = "bin\server";
 			class voteForMap {};
 			class win {};
+			class voteForWeapon {};
 		};
 	};
 	class Database {
@@ -90,9 +102,54 @@ class CfgSounds {
         sound[] = {"\sounds\levelup.ogg", 0.7, 1};
         titles[] = {};
     };
-    class ending {
-        name = "ending";
-        sound[] = {"\sounds\ending.ogg", 0.5, 1};
+    class ending_ratatata {
+        name = "RATATATA - Babymetal x ElectricCallboy";
+        sound[] = {"\sounds\endings\ending_ratatata.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_schuesseInDieLuft {
+        name = "Schuesse in die Luft - Kraftklub";
+        sound[] = {"\sounds\endings\ending_schuesseInDieLuft.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_bobbyCar {
+        name = "Bobby Car Song";
+        sound[] = {"\sounds\endings\ending_bobbyCar.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_baller {
+        name = "Baller - Abor und Tynna";
+        sound[] = {"\sounds\endings\ending_baller.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_weltGehtUnter {
+        name = "Hurra die Welt geht unter - KIZ";
+        sound[] = {"\sounds\endings\ending_weltGehtUnter.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_timeToSayGoodbye {
+        name = "Time to say Goodbye - Sarah Brightman";
+        sound[] = {"\sounds\endings\ending_timeToSayGoodbye.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_eZ4ENCE {
+        name = "EZ4ENCE";
+        sound[] = {"\sounds\endings\ending_eZ4ENCE.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_bangarang {
+        name = "Bangarang - SKRILLEX";
+        sound[] = {"\sounds\endings\ending_bangarang.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_seventhElement {
+        name = "The 7th Element - Vitas";
+        sound[] = {"\sounds\endings\ending_seventhElement.ogg", 0.5, 1};
+        titles[] = {};
+    };
+    class ending_uwu {
+        name = "UwU Song";
+        sound[] = {"\sounds\endings\ending_uwu.ogg", 0.5, 1};
         titles[] = {};
     };
 };
@@ -105,11 +162,14 @@ class CfgSounds {
 
 // Dialogs
 #include "dialogs\dialogs.hpp"
+#include "dialogs\weaponVote.hpp" 
+#include "dialogs\playerSettings.hpp"
+#include "dialogs\scoreboard.hpp"
 
 // Enable debug console for admins
 enableDebugConsole = 1;
 
 // Additional RscTitles
 class RscTitles {
-    #include "dialogs\titles.hpp"
+#include "dialogs\titles.hpp"
 };

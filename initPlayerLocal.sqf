@@ -1,2 +1,2 @@
 [] execVM "bin\client\initClient.sqf";
-execvm "jump.sqf";
+//execvm "jump.sqf";

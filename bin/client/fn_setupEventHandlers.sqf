@@ -57,7 +57,7 @@ player addEventHandler ["Hit",
 }];
 
 player addEventHandler ["Respawn", {
-	if (gg_gamestatus != 2) then {
+	if (gg_gamestatus != 3) then {
 		[] spawn gg_fnc_spawn;
 
 		// Destroy cam
@@ -66,3 +66,5 @@ player addEventHandler ["Respawn", {
 		player switchCamera "INTERNAL";
 	};
 }];
+
+

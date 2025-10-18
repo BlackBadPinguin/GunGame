@@ -10,7 +10,7 @@ if (!isNil "gg_winner") exitWith {};
 gg_winner = _winner;
 
 // Update game status
-gg_gamestatus = 2;
+gg_gamestatus = 3;
 publicVariable "gg_gamestatus";
 
 // Stop all players and display ending screen

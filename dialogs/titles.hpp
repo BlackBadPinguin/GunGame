@@ -176,6 +176,34 @@ class gungame_mapvotedfor
 	};
 };
 
+class gungame_weaponvotedfor
+{
+	idd = 5200;
+	movingEnable = true;
+	enableSimulation = true;
+	duration = 99999999;
+	fadeout=0;
+	fadein=1;
+	onLoad = "uiNamespace setVariable ['gg_weaponvotedfor',_this select 0]";
+
+	class controlsBackground {};
+
+	class controls
+	{
+		class RscText_1000: RscText
+		{
+			idc = 0;
+			text = "DU HAST FÜR WAFFEN GEVOTET"; //--- ToDo: Localize;
+			x = 0.0204688 * safezoneW + safezoneX;
+			y = 0.9026 * safezoneH + safezoneY;
+			w = 0.974531 * safezoneW;
+			h = 0.088 * safezoneH;
+			shadow = 2;
+			sizeEx = 0.08;
+		};
+	};
+};
+
 class gungame_black
 {
 	idd = -1;

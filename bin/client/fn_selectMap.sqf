@@ -26,7 +26,14 @@ createDialog "gg_dialog_votemap";
 
 [] spawn {
 	while {dialog} do {
-		((findDisplay 5100) displayCtrl 3) ctrlSetText format["Spieler online: %1", (count allPlayers)];
+		private _count = (count allPlayers) + GG_FAKE_PLAYER_COUNT;
+		
+		if(_count <= 1) then {
+			((findDisplay 5100) displayCtrl 3) ctrlSetText format["Spieler online: %1 - Warte auf min. 2 Spieler", _count];
+		} else {
+			((findDisplay 5100) displayCtrl 3) ctrlSetText format["Spieler online: %1", _count];
+		};
+	
 		sleep 0.5;
 	};
 };

@@ -6,6 +6,9 @@
 #define GUI_GRID_CENTER_H        (GUI_GRID_CENTER_HAbs / 25)
 #define GUI_GRID_CENTER_X        (safezoneX + (safezoneW - GUI_GRID_CENTER_WAbs)/2)
 #define GUI_GRID_CENTER_Y        (safezoneY + (safezoneH - GUI_GRID_CENTER_HAbs)/2)
+#define RL_DIALOG_FONTSIZE_COMMON(S) sizeEx = ((0.55 / ((getResolution select 5))) * S)
+#define RL_FONTSIZE(S) ((0.55 / ((getResolution select 5))) * S)
+
 
 class Checkbox
 {
@@ -126,34 +129,37 @@ class RscHud
     text = "";
 };
 
-class RscListNBox
-{
-    style = 16;
-    type = 102;
-    shadow = 0;
-    font = "PuristaMedium";
-    sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-    color[] = {0.95,0.95,0.95,1};
-    colorText[] = {1,1,1,1.0};
-    colorDisabled[] = {1,1,1,0.25};
-    colorScrollbar[] = {0.95,0.95,0.95,1};
-    colorSelect[] = {0,0,0,1};
-    colorSelect2[] = {0,0,0,1};
-    colorSelectBackground[] = {0.8,0.8,0.8,1};
-    colorSelectBackground2[] = {1,1,1,0.5};
-    colorPicture[] = {1,1,1,1};
-    colorPictureSelected[] = {1,1,1,1};
-        colorPictureDisabled[] = {1,1,1,1};
-    soundSelect[] = {"",0.1,1};
-    soundExpand[] = {"",0.1,1};
-    soundCollapse[] = {"",0.1,1};
-    period = 1.2;
-    maxHistoryDelay = 0.5;
-    autoScrollSpeed = -1;
-    autoScrollDelay = 5;
-    autoScrollRewind = 0;
-    class ListScrollBar: RscScrollBar{};
-    class ScrollBar: RscScrollBar{};
+class RscListNBox{
+	style = 16;
+	type = 102;
+	shadow = 0;
+	font = "PuristaMedium";
+	RL_DIALOG_FONTSIZE_COMMON(0.04);
+	color[] = {0.95,0.95,0.95,1};
+	colorText[] = {1,1,1,1.0};
+	colorDisabled[] = {1,1,1,0.25};
+	colorScrollbar[] = {0.95,0.95,0.95,1};
+	colorSelect[] = {0,0,0,1};
+	colorSelect2[] = {0,0,0,1};
+	colorSelectBackground[] = {0.8,0.8,0.8,1};
+	colorSelectBackground2[] = {1,1,1,0.5};
+	colorPicture[] = {1,1,1,1};
+	colorPictureSelected[] = {1,1,1,1};
+	colorPictureDisabled[] = {1,1,1,1};
+	soundSelect[] = {"",0.1,1};
+	soundExpand[] = {"",0.1,1};
+	soundCollapse[] = {"",0.1,1};
+	period = 1.2;
+	maxHistoryDelay = 0.5;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	rowHeight = RL_FONTSIZE(0.04);
+	drawSideArrows = 0;
+	idcLeft = -1;
+	idcRight = -1;
+	class ListScrollBar: RscScrollBar{};
+	class ScrollBar: RscScrollBar{};
 };
 
 
@@ -283,31 +289,33 @@ idc = -1;
 
 class RscButton
 {
-    style = 2;
-    x = 0;
-    y = 0;
-    w = 0.095589;
-    h = 0.039216;
-    shadow = 2;
-    font = "PuristaMedium";
-    sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-    colorText[] = {1,1,1,1.0};
-    colorDisabled[] = {0.4,0.4,0.4,1};
-    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",0.7};
-    colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
-    colorBackgroundDisabled[] = {0.95,0.95,0.95,1};
-    offsetX = 0.003;
-    offsetY = 0.003;
-    offsetPressedX = 0.002;
-    offsetPressedY = 0.002;
-    colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
-    colorShadow[] = {0,0,0,1};
-    colorBorder[] = {0,0,0,1};
-    borderSize = 0.0;
-    soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
-    soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
-    soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
-    soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+    type = 1;
+	style = 2;
+	text = "";
+	x = 0;
+	y = 0;
+	w = 0.095589;
+	h = 0.039216;
+	shadow = 0;
+	font = "PuristaMedium";
+	RL_DIALOG_FONTSIZE_COMMON(0.04);
+	colorText[] = {1,1,1,1.0};
+	colorDisabled[] = {0.4,0.4,0.4,1};
+	colorBackground[] = RLRPG_Color_2;
+	colorBackgroundActive[] = {1, 1, 1, 0.3};
+	colorBackgroundDisabled[] = {1, 1, 1, 0.3};
+	offsetX = 0.003;
+	offsetY = 0.003;
+	offsetPressedX = 0.002;
+	offsetPressedY = 0.002;
+	colorFocused[] = {1, 1, 1, 1};
+	colorShadow[] = {0,0,0,0};
+	colorBorder[] = {0,0,0,1};
+	borderSize = 0.0;
+	soundEnter[] ={ "\A3\ui_f\data\sound\RscButtonMenu\soundEnter", 0.09, 1};
+	soundPush[] ={ "\A3\ui_f\data\sound\RscButtonMenu\soundPush", 0.09, 1};
+	soundClick[] ={ "\A3\ui_f\data\sound\RscButtonMenu\soundClick", 0.09, 1};
+	soundEscape[] ={ "\A3\ui_f\data\sound\RscButtonMenu\soundEscape", 0.09, 1};
 };
 
 class RscButtonTextOnly : RscButton {

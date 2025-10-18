@@ -13,7 +13,7 @@ _weaponinfo = [currentWeapon player] call gg_fnc_weaponDetails;
 [] spawn gg_fnc_killProcessor;
 
 // Add to own killfeed
-gg_killfeed_own = gg_killfeed_own + ("<t align='center' shadow='2' size='1.3' font='PuristaMedium'>[" + (_weaponinfo select 1) + "] <t color='#FF0000'>" + (name _killer) + "</t></t><br/>");
+gg_killfeed_own = gg_killfeed_own + ("<t align='center' shadow='2' size='1.3' font='PuristaMedium'>[" + ([(_weaponinfo#1)] call gg_fnc_parseWeaponText) + "] <t color='#FF0000'>" + (name _killer) + "</t></t><br/>");
 
 // Global killfeed
 [player, (_weaponinfo select 1), _killer] remoteExec ["gg_fnc_addKillfeed"];

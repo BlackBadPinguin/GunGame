@@ -20,5 +20,16 @@ closeDialog 0;
 private _display = uiNamespace getVariable "gg_mapvotedfor",
 private _ctrl = _display displayCtrl 0;
 
-// Display text
-_ctrl ctrlSetText format ["Du hast für %1 gestimmt. Warte auf andere Spieler...", getText(missionConfigFile >> "CfgGungame" >> "Arenas" >> _mapConfig >> "name")];
+// // Display text
+// _ctrl ctrlSetText format ["Du hast für %1 gestimmt. Warte auf andere Spieler...", getText(missionConfigFile >> "CfgGungame" >> "Arenas" >> _mapConfig >> "name")];
+
+[_ctrl, _mapConfig] spawn {
+    params ["_ctrl", "_mapConfig"];
+	while {gg_gamestatus == 0} do {
+		private _count = (count allPlayers) + GG_FAKE_PLAYER_COUNT;
+		
+		_ctrl ctrlSetText format ["Du hast für %1 gestimmt. Warte auf andere Spieler... | Spieler online(min 2): %2", getText(missionConfigFile >> "CfgGungame" >> "Arenas" >> _mapConfig >> "name"), _count];
+	
+		sleep 0.5;
+	};
+};

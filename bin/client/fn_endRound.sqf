@@ -65,8 +65,16 @@ gg_exitcam_object camCommitPrepared 38;
 
 sleep 0.05;
 
-// End music
-playSound "ending";
+if (player == gg_winner) then {
+    private _music = profileNamespace getVariable ["RL_GunGame_PlayerSettings_Music", (getText (missionConfigFile >> "CfgGungame" >> "Basic" >> "default_ending"))];
+    private _musicChoices = getArray(missionConfigFile >> "CfgGungame" >> "PlayerSettings" >> "music_choices");
+
+    if ((_musicChoices find _music) == -1) then { 
+        _music = (getText (missionConfigFile >> "CfgGungame" >> "Basic" >> "default_ending"));
+    };
+
+    [_music] remoteExec ["playSound", allPlayers];
+};
 
 // Sleep
 sleep 30;

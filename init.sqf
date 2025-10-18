@@ -6,4 +6,4 @@ scriptName "init";
 2 enableChannel [true, false];
 3 enableChannel [true, false];
 4 enableChannel [true, false];
-execvm "jump.sqf";
+//execvm "jump.sqf";
